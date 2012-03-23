@@ -37,18 +37,6 @@ whitelist.check '/users/1' # => true
 whitelist.check '/projects/1' # => false
 ```
 
-## How check works (pseudocode)
-
-```
-whitelisted = false
-go through all include- and exclude-patterns in the order they were defined:
-    if url matches pattern
-        if is include
-            whitelisted = true
-        else
-            whitelisted = false
-```
-
 ## Advanced Usage
 
 ### Blacklisting
@@ -92,6 +80,18 @@ whitelist.check '/users' # => false
 whitelist.check '/users/5' # => true
 
 whitelist.check '/tasks/57' # => false
+```
+
+## How check works (pseudocode)
+
+```
+whitelisted = false
+go through all include- and exclude-patterns in the order they were defined:
+    if url matches pattern
+        if is include
+            whitelisted = true
+        else
+            whitelisted = false
 ```
 
 ## License
