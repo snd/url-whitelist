@@ -24,13 +24,13 @@ Whitelist = require 'url-whitelist'
 whitelist = new Whitelist
 ```
 
-## Whitelist a url pattern
+### Whitelist a url pattern
 
 ```coffeescript
 whitelist.include '/users/:id'
 ```
 
-## Check whether urls are on the whitelist
+### Check whether urls are on the whitelist
 
 ```coffeescript
 whitelist.check '/users/1' # => true
