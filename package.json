@@ -1,0 +1,17 @@
+{
+    "name": "url-whitelist",
+    "description": "match urls with patterns and extract named url segments",
+    "author": "Maximilian Krüger <kruemaxi@googlemail.com> (http://github.com/snd)",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/snd/url-whitelist.git"
+    },
+    "dependencies": {
+        "underscore": "*",
+        "url-pattern": "git://github.com/snd/url-pattern.git"
+    },
+    "devDependencies": {
+        "nodeunit": "*"
+    }
+}
