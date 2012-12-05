@@ -1,6 +1,6 @@
 {
     "name": "url-whitelist",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "url-whitelist can create whitelists by including and excluding url patterns and check urls against them",
     "homepage": "http://github.com/snd/url-whitelist",
     "author": {
