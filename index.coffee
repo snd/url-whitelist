@@ -1,18 +1,15 @@
-_ = require 'underscore'
+newPattern = require 'url-pattern'
 
-Pattern = require 'url-pattern'
-
-module.exports = class
-
-    constructor: ->
-        @rules = []
-
-    include: (pattern) -> @rules.push {include: true, pattern: new Pattern pattern}
-    exclude: (pattern) -> @rules.push {include: false, pattern: new Pattern pattern}
+whitelist =
+    include: (pattern) -> @rules.push {include: true, pattern: newPattern pattern}
+    exclude: (pattern) -> @rules.push {include: false, pattern: newPattern pattern}
 
     check: (url) ->
-        whitelist = false
+        allow = false
+        @rules.forEach (rule) -> allow = rule.include if rule.pattern.match(url)?
+        allow
 
-        _.each @rules, (rule) -> whitelist = rule.include if rule.pattern.match(url)?
-
-        whitelist
+module.exports = ->
+    w = Object.create whitelist
+    w.rules = []
+    w

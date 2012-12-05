@@ -1,17 +1,33 @@
 {
     "name": "url-whitelist",
-    "description": "match urls with patterns and extract named url segments",
-    "author": "Maximilian Krüger <kruemaxi@googlemail.com> (http://github.com/snd)",
     "version": "0.1.0",
+    "description": "url-whitelist can create whitelists by including and excluding url patterns and check urls against them",
+    "homepage": "http://github.com/snd/url-whitelist",
+    "author": {
+        "name": "Maximilian Krüger",
+        "email": "kruemaxi@gmail.com",
+        "url": "http://github.com/snd"
+    },
+    "bugs": {
+        "url": "http://github.com/snd/url-whitelist/issues",
+        "email": "kruemaxi@gmail.com"
+    },
     "repository": {
         "type": "git",
         "url": "git://github.com/snd/url-whitelist.git"
     },
+    "licenses": {
+        "type": "MIT",
+        "url": "git://github.com/snd/url-whitelist/LICENSE"
+    },
+    "engines": {
+        "node": ">=0.8.5"
+    },
     "dependencies": {
-        "underscore": "*",
-        "url-pattern": "git://github.com/snd/url-pattern.git"
+        "coffee-script": "1.4.0",
+        "url-pattern": "0.2.0"
     },
     "devDependencies": {
-        "nodeunit": "*"
+        "nodeunit": "0.7.4"
     }
 }

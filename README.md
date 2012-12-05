@@ -1,52 +1,50 @@
 # url-whitelist
 
-create whitelists by including and excluding url patterns and check urls against them
+url-whitelist can create whitelists by including and excluding url patterns and check urls against them
 
 see [url-pattern](https://github.com/snd/url-pattern) for supported url patterns
 
-## Installation
+### install
 
 ```
-npm install git://github.com/snd/url-whitelist.git
+npm install url-whitelist
 ```
 
-## Usage
+### use
 
-### Require it
+##### require
 
 ```coffeescript
-Whitelist = require 'url-whitelist'
+newWhitelist = require 'url-whitelist'
 ```
 
-### Make a new whitelist
+##### make a new whitelist
 
 ```coffeescript
-whitelist = new Whitelist
+whitelist = newWhitelist()
 ```
 
-### Whitelist a url pattern
+##### whitelist a url pattern
 
 ```coffeescript
 whitelist.include '/users/:id'
 ```
 
-### Check whether urls are on the whitelist
+##### check whether urls are on the whitelist
 
 ```coffeescript
 whitelist.check '/users/1' # => true
 whitelist.check '/projects/1' # => false
 ```
 
-## Advanced Usage
-
-### Blacklisting
+##### blacklisting
 
 by default a whitelist excludes everything.
-to include everything by default and then selectively exclude do:
+you can include everything by default and then selectively exclude patterns.
 
 ```coffeescript
 
-blacklist = new Whitelist
+blacklist = newWhitelist()
 blacklist.include '*'
 
 blacklist.exclude '/users/:id'
@@ -56,15 +54,15 @@ blacklist.check '/users/:id' # => false
 blacklist.check 'skljdf' # => true
 ```
 
-## Example
+### example
 
 whitelist `/projects/*` except for `/projects/hidden/*` and `projects/:id/secret`.
 also whitelist `/users/:id`
 
 ```coffeescript
-Whitelist = require 'whitelist'
+newWhitelist = require 'url-whitelist'
 
-whitelist = new Whitelist
+whitelist = newWhitelist
 
 whitelist.include '/projects/*'
 whitelist.exclude '/projects/hidden/*'
@@ -82,7 +80,7 @@ whitelist.check '/users/5' # => true
 whitelist.check '/tasks/57' # => false
 ```
 
-## How check works (pseudocode)
+### how check works (pseudocode)
 
 ```
 whitelisted = false
@@ -94,6 +92,4 @@ go through all include- and exclude-patterns in the order they were defined:
             whitelisted = false
 ```
 
-## License
-
-url-whitelist is released under the MIT License (see LICENSE for details).
+### license: MIT

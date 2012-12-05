@@ -1,9 +1,9 @@
-Whitelist = require './index'
+newWhitelist = require './index'
 
 module.exports =
 
     'nothing is allowed by default': (test) ->
-        list = new Whitelist
+        list = newWhitelist()
 
         test.ok not list.check 'aslkjdfl'
         test.ok not list.check 'kfdj'
@@ -12,7 +12,7 @@ module.exports =
         test.done()
 
     'simple include': (test) ->
-        list = new Whitelist
+        list = newWhitelist()
         list.include 'aaaa'
 
         test.ok list.check 'aaaa'
@@ -22,7 +22,7 @@ module.exports =
         test.done()
 
     'simple segment include': (test) ->
-        list = new Whitelist
+        list = newWhitelist()
         list.include '/foo/:bar'
 
         test.ok list.check '/foo/1'
@@ -35,7 +35,7 @@ module.exports =
         test.done()
 
     'simple wildcard include': (test) ->
-        list = new Whitelist
+        list = newWhitelist()
         list.include '/users/*'
 
         test.ok list.check '/users/'
@@ -48,7 +48,7 @@ module.exports =
         test.done()
 
     'simple exclude after including everything': (test) ->
-        list = new Whitelist
+        list = newWhitelist()
         list.include '*'
         list.exclude '/users/:id'
 
@@ -60,7 +60,7 @@ module.exports =
         test.done()
 
     'selective exclude after include': (test) ->
-        list = new Whitelist
+        list = newWhitelist()
 
         list.include '/projects/*'
         list.exclude '/projects/hidden/*'
