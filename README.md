@@ -1,5 +1,7 @@
 # url-whitelist
 
+[![Build Status](https://travis-ci.org/snd/url-whitelist.png)](https://travis-ci.org/snd/url-whitelist)
+
 url-whitelist can create whitelists by including and excluding url patterns and check urls against them
 
 see [url-pattern](https://github.com/snd/url-pattern) for supported url patterns
