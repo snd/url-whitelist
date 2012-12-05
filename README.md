@@ -64,7 +64,7 @@ also whitelist `/users/:id`
 ```coffeescript
 newWhitelist = require 'url-whitelist'
 
-whitelist = newWhitelist
+whitelist = newWhitelist()
 
 whitelist.include '/projects/*'
 whitelist.exclude '/projects/hidden/*'
