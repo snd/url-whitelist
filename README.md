@@ -1,4 +1,4 @@
-# url-whitelist
+# url-whitelist (deprecated)
 
 [![Build Status](https://travis-ci.org/snd/url-whitelist.png)](https://travis-ci.org/snd/url-whitelist)
 
